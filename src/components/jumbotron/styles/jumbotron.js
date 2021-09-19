@@ -1,24 +1,27 @@
 import styled from 'styled-components/macro';
 
 export const Item = styled.div`
-    display: flex;
+    display: flex;    
     border-bottom: 8px solid #222;
     padding: 50px 5px;
-    overflow: hidden;
+    overflow: hidden;        
 `;
 
 export const Inner = styled.div`
     display: flex;
     align-items: center;
-    flex-direction: ${({ direction }) => direction};
+    flex-direction: row;
     justify-content: space-between;
     max-width: 1100px;
     margin: auto;
     width: 100%;
+    ${Item}:nth-of-type(1) {
+       flex-direction: row-reverse;
+    } 
 
     @media (max-width: 1000px) {
         flex-direction: column;
-    }
+    }     
 `;
 
 export const Pane = styled.div`
@@ -28,7 +31,7 @@ export const Pane = styled.div`
         width: 100%;
         padding: 0 45px;
         text-align: center;
-    }
+    }        
 `;
 
 export const Title = styled.h2`
@@ -55,6 +58,7 @@ export const Image = styled.img`
     max-width: 100%;
     height: auto;
 `;
+
 export const Container = styled.div`
     @media (max-width: 1000px) {
         ${Item}:last-of-type h2 {
