@@ -4,7 +4,7 @@ export const Item = styled.div`
     display: flex;    
     border-bottom: 8px solid #222;
     padding: 50px 5px;
-    overflow: hidden;        
+    overflow: hidden;      
 `;
 
 export const Inner = styled.div`
@@ -14,12 +14,9 @@ export const Inner = styled.div`
     justify-content: space-between;
     max-width: 1100px;
     margin: auto;
-    width: 100%;
-    ${Item}:nth-of-type(1) {
-       flex-direction: row-reverse;
-    } 
+    width: 100%;    
 
-    @media (max-width: 1000px) {
+  @media (max-width: 1000px) {
         flex-direction: column;
     }     
 `;
@@ -60,7 +57,11 @@ export const Image = styled.img`
 `;
 
 export const Container = styled.div`
-    @media (max-width: 1000px) {
+  ${Item}:nth-child(even) ${Inner} {
+    flex-direction: row-reverse;
+  }
+  
+  @media (max-width: 1000px) {
         ${Item}:last-of-type h2 {
             margin-bottom: 50px;
         }

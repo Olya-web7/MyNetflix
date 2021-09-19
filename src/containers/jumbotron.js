@@ -9,7 +9,7 @@ export function JumbotronContainer() {
     useEffect(() => {
         axios.get('https://api.tvmaze.com/shows')
             .then(res => {
-                console.log(res, shows.length)
+                console.log(res.data)
                 setShows(res.data)
             })
             .catch(err => {
@@ -19,8 +19,7 @@ export function JumbotronContainer() {
 
         return (
         <Jumbotron.Container>
-            {shows.length = 3}
-            {shows.map((item) => (
+            {shows.filter(el=>el.rating.average>9.1).map((item) => (
                 <Jumbotron key={item.id}>
                     <Jumbotron.Pane>
                         <Jumbotron.Title>{item.name}</Jumbotron.Title>
