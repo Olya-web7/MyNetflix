@@ -54,11 +54,19 @@ export const SubTitle = styled.h3`
 export const Image = styled.img`
     max-width: 100%;
     height: auto;
+    border-radius: 15px;
+    &:hover {
+      transform: scale(1.1);
+      transition: 1.3s;
+    }
 `;
 
 export const Container = styled.div`
   ${Item}:nth-child(even) ${Inner} {
     flex-direction: row-reverse;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
   }
   
   @media (max-width: 1000px) {
