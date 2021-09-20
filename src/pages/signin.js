@@ -3,8 +3,11 @@ import { FirebaseContext} from "../context/firebase";
 import { HeaderContainer } from '../containers/header';
 import { FooterContainer } from '../containers/footer';
 import { Form } from '../components';
+import * as ROUTES from '../constants/routes';
+import {useHistory} from "react-router-dom";
 
 export default function SignIn() {
+    const history = useHistory();
     const { firebase } = useContext(FirebaseContext);
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +21,7 @@ export default function SignIn() {
           .auth()
           .signInWithEmailAndPassword(emailAddress, password)
           .then(() => {
-
+            history.push(ROUTES.BROWSE);
           })
           .catch((error) => {
               setEmailAddress('');
