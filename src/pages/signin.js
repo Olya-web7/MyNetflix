@@ -14,6 +14,7 @@ export default function SignIn() {
     const [error, setError] = useState('');
 
     const isInvalid = password === '' || emailAddress === '';
+
     const handleSignIn = (event) => {
         event.preventDefault();
 
