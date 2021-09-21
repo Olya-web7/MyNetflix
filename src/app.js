@@ -6,8 +6,7 @@ import { IsUserRedirect, ProtectedRoute } from './helpers/routes';
 import { useAuthListener } from "./hooks";
 
 export default function App() {
-  const {user} = useAuthListener();
-  console.log(user);
+  const { user } = useAuthListener();
 
   return (
     <Router>
@@ -30,7 +29,7 @@ export default function App() {
         <IsUserRedirect
           user={user}
           loggedInPath={ROUTES.BROWSE}
-          path={ROUTES.HOME} exact>
+          path={ROUTES.HOME}>
           <Home />
         </IsUserRedirect>
       </Switch>
