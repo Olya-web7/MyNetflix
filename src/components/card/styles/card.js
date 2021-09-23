@@ -91,7 +91,7 @@ export const Item = styled.div`
   transition: transform 0.2s;
 
   &:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
     z-index: 99;
   }
 
