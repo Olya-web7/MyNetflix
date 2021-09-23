@@ -9,11 +9,7 @@ export function JumbotronContainer() {
     useEffect(() => {
         axios.get('https://api.tvmaze.com/shows')
             .then(res => {
-                console.log(res.data)
                 setShows(res.data)
-            })
-            .catch(err => {
-                console.log(err);
             })
     }, []);
 
