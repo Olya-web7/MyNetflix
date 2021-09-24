@@ -15,7 +15,7 @@ export function BrowseContainer({slides}) {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
   const [slideRows, setSlideRows] = useState([]);
-  const [category, setCategory] = useState('series');
+  const [category, setCategory] = useState('shows');
 
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function BrowseContainer({slides}) {
   }, [slides, category]);
 
   useEffect(() => {
-    const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+    const fuse = new Fuse(slideRows, { keys: ['data.summary', 'data.name', 'data.genres'] });
     const results = fuse.search(searchTerm).map(({ item }) => item);
 
     if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
@@ -81,10 +81,9 @@ export function BrowseContainer({slides}) {
       </Header>
 
       <Card.Group>
-
-        {slideRows.map((slideItem) => (
-          <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
-            <Card.Title>{slideItem.name}</Card.Title>
+        {['Drama', 'Horror', 'Action', 'Romance'].map((slideItem, i) => (
+          <Card key={i}>
+            <Card.Title>{slideItem}</Card.Title>
             <Card.Entities>
               {shows.map((item) => (
                 <Card.Item key={item.id} item={item}>

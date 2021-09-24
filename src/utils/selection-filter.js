@@ -1,18 +1,11 @@
-export default function selectionFilter({ series, films } = []) {
+export default function selectionFilter({ shows } = []) {
   return {
-    series: [
-      { title: 'Documentaries', data: series?.filter((item) => item.genre === 'documentaries') },
-      { title: 'Comedies', data: series?.filter((item) => item.genre === 'comedies') },
-      { title: 'Children', data: series?.filter((item) => item.genre === 'children') },
-      { title: 'Crime', data: series?.filter((item) => item.genre === 'crime') },
-      { title: 'Feel Good', data: series?.filter((item) => item.genre === 'feel-good') },
-    ],
-    films: [
-      { title: 'Drama', data: films?.filter((item) => item.genre === 'drama') },
-      { title: 'Thriller', data: films?.filter((item) => item.genre === 'thriller') },
-      { title: 'Children', data: films?.filter((item) => item.genre === 'children') },
-      { title: 'Suspense', data: films?.filter((item) => item.genre === 'suspense') },
-      { title: 'Romance', data: films?.filter((item) => item.genre === 'romance') },
-    ],
+    shows: [
+      { title: 'Documentaries', data: shows?.filter((item) => item.genres[0] === 'documentaries') },
+      { title: 'Comedies', data: shows?.filter((item) => item.genre === 'comedies') },
+      { title: 'Children', data: shows?.filter((item) => item.genre === 'children') },
+      { title: 'Crime', data: shows?.filter((item) => item.genre === 'crime') },
+      { title: 'Feel Good', data: shows?.filter((item) => item.genre === 'feel-good') },
+    ]
   };
 }
