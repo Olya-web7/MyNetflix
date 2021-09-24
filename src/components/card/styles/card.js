@@ -61,7 +61,7 @@ export const Text = styled.p`
 export const Entities = styled.div`
   display: flex;
   flex-direction: row;
-  //flex-wrap: wrap;
+  flex-wrap: wrap;
 `;
 
 export const Meta = styled.div`
@@ -78,8 +78,8 @@ export const Image = styled.img`
   max-width: 305px;
   cursor: pointer;
   height: auto;
-  padding: 0;
-  margin: 0;
+  padding: 5px;
+  margin: 15px;
 `;
 
 export const Item = styled.div`

@@ -78,16 +78,18 @@ export function BrowseContainer({slides}) {
             </Header.Profile>
           </Header.Group>
         </Header.Frame>
+        <Header.Feature />
       </Header>
 
       <Card.Group>
-        {['Drama', 'Horror', 'Action', 'Romance'].map((slideItem, i) => (
+        {['Horror', 'Action', 'Romance', 'Crime', 'Adventure', 'Drama'].map((slideItem, i) => (
           <Card key={i}>
             <Card.Title>{slideItem}</Card.Title>
             <Card.Entities>
-              {shows.map((item) => (
+              {shows
+                .filter(item=> item.genres[0] === slideItem)
+                .map((item) => (
                 <Card.Item key={item.id} item={item}>
-                  <p>{item.genres[0]}</p>
                   <Card.Image src={item.image.medium} />
                   <Card.Meta>
                     <Card.SubTitle>{item.name}</Card.SubTitle>
