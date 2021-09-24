@@ -61,7 +61,7 @@ export const Text = styled.p`
 export const Entities = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
 `;
 
 export const Meta = styled.div`

@@ -11,6 +11,12 @@ import Fuse from 'fuse.js';
 export function BrowseContainer({slides}) {
 
   const [shows, setShows] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [profile, setProfile] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [slideRows, setSlideRows] = useState([]);
+  const [category, setCategory] = useState('series');
+
 
   useEffect(() => {
     axios.get('https://api.tvmaze.com/shows')
@@ -19,13 +25,6 @@ export function BrowseContainer({slides}) {
         setShows(res.data)
       })
   }, []);
-
-  const [searchTerm, setSearchTerm] = useState('');
-  const [profile, setProfile] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [slideRows, setSlideRows] = useState([]);
-  const [category, setCategory] = useState('series');
-
 
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
@@ -89,6 +88,7 @@ export function BrowseContainer({slides}) {
             <Card.Entities>
               {shows.map((item) => (
                 <Card.Item key={item.id} item={item}>
+                  <p>{item.genres[0]}</p>
                   <Card.Image src={item.image.medium} />
                   <Card.Meta>
                     <Card.SubTitle>{item.name}</Card.SubTitle>
@@ -106,6 +106,7 @@ export function BrowseContainer({slides}) {
         ))}
 
       </Card.Group>
+
       <FooterContainer />
     </>
     ) : (
