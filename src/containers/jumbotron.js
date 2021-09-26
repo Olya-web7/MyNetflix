@@ -16,7 +16,7 @@ export function JumbotronContainer() {
         return (
         <Jumbotron.Container>
             {shows
-              .filter(el=>el.rating.average>8.9)
+              .filter(el=>el.rating.average>9)
               .map((item) => (
                 <Jumbotron key={item.id}>
                     <Jumbotron.Pane>

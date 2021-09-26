@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const Error = styled.div`
-  background: #e87c03;
+  background: #6bbbd8;
   border-radius: 4px;
   font-size: 14px;
   margin: 0 0 16px;
@@ -75,7 +75,7 @@ export const Input = styled.input`
 `;
 
 export const Submit = styled.button`
-  background: #e50914;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,153,120,1) 55%, rgba(107,187,216,1) 100%);
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;

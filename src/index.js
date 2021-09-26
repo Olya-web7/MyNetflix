@@ -5,13 +5,14 @@ import App from './app';
 import { GlobalStyles } from './global-styles';
 import { firebase } from './lib/firebase.prod';
 import { FirebaseContext } from './context/firebase';
+import ShowsState from "./context/shows/ShowsState";
 
 render(
-    <>
-         <FirebaseContext.Provider value={{ firebase }}>
-            <GlobalStyles />
-            <App />
-         </FirebaseContext.Provider>
-    </>,
+    <ShowsState>
+     <FirebaseContext.Provider value={{ firebase }}>
+        <GlobalStyles />
+        <App />
+     </FirebaseContext.Provider>
+    </ShowsState>,
     document.getElementById('root')
 );

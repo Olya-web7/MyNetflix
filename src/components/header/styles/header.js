@@ -4,14 +4,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 export const Background = styled.div`
   display: flex;
   flex-direction: column;
-  background: url(${({ src }) => 
-          (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) 
-  top left / cover no-repeat;
-  
-  @media (max-width: 1100px) {
-    ${({ dontShowOnSmallViewPort}) =>
-            dontShowOnSmallViewPort && `background:none;`}
-  }
+  background: url('../images/misc/home-bg.jpg') top left / cover no-repeat;  
 `;
 
 export const Group = styled.div`
@@ -29,10 +22,6 @@ export const Container = styled.div`
   
   a {
     display: flex;
-  }
-  
-  @media (max-width: 1000px) {
-    margin: 0 30px;
   }
 `;
 
@@ -96,62 +85,6 @@ export const Dropdown = styled.div`
     }
 `;
 
-export const Search = styled.div`
-  display: flex;align-items: center;
-    
-    svg {
-        color: white;
-        cursor: pointer;
-    }
-    
-    @media (max-width: 700px) {
-        display: none;
-    }
-`;
-
-export const SearchIcon = styled.button`
-  cursor: pointer;
-    background-color: transparent;
-    border: 0;
-    
-    img {
-        filter: brightness(0) invert(1);
-        width: 16px;
-    }
-`;
-
-export const PlayButton = styled.button`
-    box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
-    background-color: #e6e6e6;
-    color: #000;
-    font-weight: bold;
-    border-width: 0;
-    padding: 10px 20px;
-    border-radius: 5px;
-    max-width: 130px;
-    font-size: 20px;
-    margin-top: 30px;
-    cursor: pointer;
-        
-    &:hover {
-        background-color: #ff1e1e;
-        color: white;
-    }
-`;
-
-export const SearchInput = styled.input`
-  background-color: #44444459;
-    color: white;
-    border: 1px solid white;
-    transition: width 0.5s;
-    height: 30px;
-    font-size: 14px;
-    margin-left: ${({active}) => (active === true ? '10px' : '0')};
-    padding: ${({active}) => (active === true ? '0 10px' : '0')};
-    opacity: ${({active}) => (active === true ? '1' : '0')};
-    width: ${({active}) => (active === true ? '200px' : '0px')};
-`;
-
 export const Profile = styled.div`
   display: flex;
     align-items: center;
@@ -169,19 +102,20 @@ export const Profile = styled.div`
 `;
 
 export const Logo = styled.img`
-  height: 32px;
-  width: 108px;
-  margin-right: 40px;
+  height: 35px;
+  width: auto;
+  margin: 12px;
   
   @media (min-width: 1449px) {
-    height: 45px;
-    width: 167px;
+    height: 55px;
+    width: auto;
+    margin: 15px;
   }
 `;
 
 export const ButtonLink = styled(ReactRouterLink)`
   display:block;
-  background-color: #e50914;
+  background-color: #6bbbd8;
   width: 84px;
   height: fit-content;
   color: white;
@@ -194,7 +128,7 @@ export const ButtonLink = styled(ReactRouterLink)`
   box-sizing: border-box;
   
   &:hover {
-    background-color: #f40612;
+    background-color: #599978;
   }
 `;
 
