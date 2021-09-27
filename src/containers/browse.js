@@ -1,12 +1,12 @@
 import React, {useContext, useState, useEffect} from "react";
 import {SelectProfileContainer} from "./profiles";
 import { FirebaseContext } from "../context/firebase";
-import { Header, Loading} from '../components';
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 import { FooterContainer } from './footer';
-import Searchbar from "../components/Searchbar";
 import MyPage from "../containers/myPage";
+import { Header, Loading, Searchbar} from '../components';
+
 
 export function BrowseContainer() {
   const [profile, setProfile] = useState({});
@@ -43,10 +43,8 @@ export function BrowseContainer() {
             </Header.Profile>
           </Header.Group>
         </Header.Frame>
-
         <Searchbar />
       </Header>
-
       <MyPage />
       <FooterContainer />
     </>

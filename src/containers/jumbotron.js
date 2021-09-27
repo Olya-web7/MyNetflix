@@ -13,6 +13,15 @@ export function JumbotronContainer() {
             })
     }, []);
 
+    const removeTags = (text) => {
+        if (text === null || text === "") {
+            return false;
+        } else {
+            text = text.toString();
+        }
+        return text.replace(/(<([^>]+)>)/gi, "");
+    };
+
         return (
         <Jumbotron.Container>
             {shows
@@ -21,7 +30,8 @@ export function JumbotronContainer() {
                 <Jumbotron key={item.id}>
                     <Jumbotron.Pane>
                         <Jumbotron.Title>{item.name}</Jumbotron.Title>
-                        <Jumbotron.SubTitle>{item.rating.average}</Jumbotron.SubTitle>
+                        <Jumbotron.SubTitle>{item.summary && removeTags(item.summary)}</Jumbotron.SubTitle>
+
                     </Jumbotron.Pane>
                     <Jumbotron.Pane>
                         <Jumbotron.Image src={item.image.medium} />

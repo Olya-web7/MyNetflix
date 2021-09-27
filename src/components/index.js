@@ -8,3 +8,4 @@ export { default as Profiles } from './profiles';
 export { default as Loading } from './loading';
 export { default as MyPageContainer } from './myPage';
 export { default as ListItem } from './listItem';
+export { default as Searchbar } from './Searchbar';

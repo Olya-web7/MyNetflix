@@ -1,9 +1,13 @@
 // import * as ROUTES from '../constants/routes';
 import {List} from "../components/listItem";
 
-const ListItem = ({ image, name, rating, id }) => {
+const ListItem = ({ image, name, rating, id, item }) => {
+
   return (
-    <List to={`/singleshow/${id}`} className="listitem">
+    <List 
+      key={id}      
+      className="listitem"
+    >
       <img src={image} alt={name} />
       <List.Info>
         <List.Name>{name}</List.Name>

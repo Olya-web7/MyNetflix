@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
-import ShowsContext from "../context/shows/showsContext";
-import Loader from "../components/Loader";
+import ShowsContext from "../../context/shows/showsContext";
+import Loader from "../../components/Loader";
 // import * as ROUTES from '../constants/routes';
 
 import './singlePage.css';
@@ -13,15 +13,6 @@ const Singlepage = ({ match }) => {
 
     // eslint-disable-next-line
   }, []);
-
-  const removeTags = (text) => {
-    if (text === null || text === "") {
-      return false;
-    } else {
-      text = text.toString();
-    }
-    return text.replace(/(<([^>]+)>)/gi, "");
-  };
 
   return (
     <>
@@ -66,7 +57,6 @@ const Singlepage = ({ match }) => {
                 "No official site"
               )}
             </p>
-            <p>{singleShow.summary && removeTags(singleShow.summary)}</p>
           </div>
         </div>
       )}
