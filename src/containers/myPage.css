@@ -27,3 +27,11 @@
     padding: 5px;
     text-align: center;
 }
+.title {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+}
+

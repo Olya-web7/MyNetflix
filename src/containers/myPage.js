@@ -66,8 +66,8 @@ const MyPage = () => {
                     className='overlay d-flex align-items-center justify-content-center'>
                     <AddFavourites />
                   </div>
-                  <div className='position-absolute m-2'>
-                    <h3 className='text-center'>{show.show.name}</h3>
+                  <div className='title'>
+                    <h3>{show.show.name}</h3>
                   </div>
                 </div>
             ))}
@@ -91,9 +91,6 @@ const MyPage = () => {
                 onClick={() => removeFavouriteMovie(favourite)}
                 className='overlay d-flex align-items-center justify-content-center'>
                 <RemoveFavourites />
-              </div>
-              <div className='position-absolute top-0'>
-                <h3 className='text-center'>{favourite.show.name}</h3>
               </div>
             </div>
           ))}
