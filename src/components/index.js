@@ -6,5 +6,4 @@ export { default as OptForm } from './opt-form';
 export { default as Form } from './form';
 export { default as Profiles } from './profiles';
 export { default as Loading } from './loading';
-// export { default as MyPageContainer } from './myPage';
 export { default as Searchbar } from './Searchbar';
