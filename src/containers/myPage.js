@@ -1,6 +1,4 @@
-// eslint-disable-next-line
 import { useContext, useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ShowsContext from '../context/shows/showsContext';
 import MovieListHeading from "../components/MovieListHeading";
 import AddFavourites from "../components/AddFavourites";
@@ -44,14 +42,14 @@ const MyPage = () => {
 
 
   return (
-    <div className='movie-app container-fluid'>
+    <div className='movie-app'>
 
-        <div className='m-4'>
+        <div className='heading'>
           <MovieListHeading heading='Movies'/>
         </div>
-        <div className='d-flex m-2 flex-wrap'>
+        <div className='wrapper'>
           {shows.map((show) => (
-                <div className='image-container d-flex m-3' key={show.show.id}>
+                <div className='image-container' key={show.show.id}>
 
                   <img src={show.show.image
                     ? show.show.image.medium
@@ -63,7 +61,7 @@ const MyPage = () => {
 
                   <div
                     onClick={() => addFavouriteMovie(show)}
-                    className='overlay d-flex align-items-center justify-content-center'>
+                    className='overlay favourites'>
                     <AddFavourites />
                   </div>
                   <div className='title'>
@@ -73,12 +71,12 @@ const MyPage = () => {
             ))}
         </div>
 
-      <div className='m-4'>
+      <div className='heading'>
         <MovieListHeading heading='My Favourites'/>
       </div>
-      <div className='d-flex m-2 flex-wrap'>
+      <div className='wrapper'>
         {favourites.map((favourite) => (
-            <div className='image-container d-flex m-3' key={favourite.show.id}>
+            <div className='image-container' key={favourite.show.id}>
               <img src={favourite.show.image
                 ? favourite.show.image.medium
                 : "https://t3.ftcdn.net/jpg/01/84/81/64/360_F_184816468_sXO2m7Xhy2xqENls5YxrKlmFg3Ii82Mr.jpg"
