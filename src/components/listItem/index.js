@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
 import './listItem.css';
 
-const ListItem = ({ image, name, rating, id }) => {
+const ListItem = (props) => {
+  const FavouriteComponent = props.favouriteComponent;
+
   return (
-    <Link to={`/singleshow/${id}`} className="listitem">
-      <img src={image} alt={name} />
-      <div className="listitem__info">
-        <h4 className="info__name">{name}</h4>
-        <h4 className="info__rating">{rating}</h4>
+    <div
+      className="image-container d-flex m-3">
+      <img src={props.image} alt='movie' />
+
+      <div
+        className='overlay d-flex align-items-center justify-content-center'>
+        <FavouriteComponent />
       </div>
-    </Link>
+
+    </div>
   );
 };
 
