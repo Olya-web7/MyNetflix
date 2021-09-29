@@ -7,14 +7,13 @@ import { SEARCH_SHOWS, SET_LOADING } from "../types";
 const ShowsState = (props) => {
   const initialState = {
     shows: [],
-    // singleShow: {},
     loading: false,
   };
 
   const [state, dispatch] = useReducer(ShowsReducer, initialState);
 
   const searchShows = async (searchTerm) => {
-    dispatch({ type: SET_LOADING });
+    // dispatch({ type: SET_LOADING });
 
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${searchTerm}`
@@ -28,12 +27,10 @@ const ShowsState = (props) => {
     });
   };
 
-
   return (
     <ShowsContext.Provider
       value={{
         shows: state.shows,
-        // singleShow: state.singleShow,
         loading: state.loading,
         searchShows,
       }}
